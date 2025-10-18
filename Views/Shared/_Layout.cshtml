@@ -1,50 +1,141 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LF</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/LF.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - Loi de Finances Madagascar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1b8895',
+                        secondary: '#82d4d9',
+                        accent: '#c8e785'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LF</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<body class="h-full flex flex-col bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-primary shadow-lg sticky top-0 z-50 border-b-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo et Titre à Gauche -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img src="~/img/logo.png" alt="Logo Madagascar" class="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-white">Budget des citoyens</h1>
+                        <p class="text-xs md:text-sm text-accent font-medium">relatif à la loi de finances 2025</p>
+                    </div>
+                </div>
+
+                <!-- Menu de Navigation à Droite -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Accueil
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Intérieures
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Douanières
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Non Fiscales
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Dons" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Dons
+                    </a>
+                </div>
+
+                <!-- Menu Mobile (Hamburger) -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-accent focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - LF - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <!-- Menu Mobile Déroulant -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Accueil
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Intérieures
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Douanières
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Recettes Non Fiscales
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Dons" 
+                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
+                        Dons
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="flex-grow">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-auto border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm font-semibold">Loi de Finances 2025</p>
+                    <p class="text-xs text-secondary">République de Madagascar</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm">&copy; 2025 - Ministère de l'Économie et des Finances</p>
+                    <p class="text-xs text-secondary mt-1">Tous droits réservés</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script>
+        // Menu Mobile Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

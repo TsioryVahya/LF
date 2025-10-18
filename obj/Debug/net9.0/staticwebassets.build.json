@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vZUOEqkuJIDzKjjkxJoKBQydSn9Pxa6RWfgNlxvVaZg=",
+  "Hash": "jayshga1TKwRz4cecZPxkAPYwONJ0nXcGvoY/scYUlM=",
   "Source": "LF",
   "BasePath": "_content/LF",
   "Mode": "Default",
@@ -668,12 +668,12 @@
       "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-b9sayid5wm.gz",
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "SourceId": "LF",
       "SourceType": "Discovered",
       "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/LF",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=0oeuki0bj6}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -682,8 +682,8 @@
       "RelatedAsset": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "0suozzrugb",
-      "Integrity": "0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=",
+      "Fingerprint": "0mzqo2o19r",
+      "Integrity": "OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "0oeuki0bj6",
+      "Integrity": "QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1443,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\logo.png",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "img/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e81dzaiu1q",
+      "Integrity": "flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\site.js",
@@ -2728,13 +2749,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-b9sayid5wm.gz",
+      "Route": "css/site.0oeuki0bj6.css",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.000664451827"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2765,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1504"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2793,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "0oeuki0bj6"
         },
         {
           "Name": "label",
@@ -2786,12 +2807,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.0oeuki0bj6.css",
       "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2822,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "5768"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2830,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +2844,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "0oeuki0bj6"
         },
         {
           "Name": "label",
@@ -2831,13 +2852,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-b9sayid5wm.gz",
+      "Route": "css/site.0oeuki0bj6.css.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +2867,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1504"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +2875,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +2897,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "0oeuki0bj6"
         },
         {
           "Name": "label",
@@ -2884,18 +2905,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-b9sayid5wm.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.000664451827"
         }
       ],
       "ResponseHeaders": [
@@ -2905,15 +2926,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1504"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2933,13 +2954,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE="
         }
       ]
     },
@@ -2954,7 +2975,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "5768"
         },
         {
           "Name": "Content-Type",
@@ -2962,11 +2983,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2976,13 +2997,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-QH6yTWpWlhatR2Mu5KCsTZHcqtY1sevgorLiru0TwEE="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-b9sayid5wm.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2991,7 +3012,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1504"
         },
         {
           "Name": "Content-Type",
@@ -2999,11 +3020,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 18 Oct 2025 11:45:09 GMT"
+          "Value": "Sat, 18 Oct 2025 12:12:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3021,7 +3042,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-OKnjjFK+QofBCbszaw6lj0wVj9S6NIeI3IYxwE6ELmM="
         }
       ]
     },
@@ -3320,6 +3341,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.e81dzaiu1q.png",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37343"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 12:38:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e81dzaiu1q"
+        },
+        {
+          "Name": "label",
+          "Value": "img/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.png",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37343"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 12:38:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0="
         }
       ]
     },
