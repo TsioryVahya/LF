@@ -1,21 +1,37 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using LF.Models;
+using LF.Data;
 
 namespace LF.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
         return View();
+    }
+
+    public async Task<IActionResult> RecettesInterieures()
+    {
+        // Récupérer les recettes intérieures avec leurs natures d'impôts
+        var recettes = await _context.RecettesInterieurs
+            .Include(r => r.NatureImpot)
+            .OrderBy(r => r.Annee)
+            .ThenBy(r => r.NatureImpot.IdNatureImpots)
+            .ToListAsync();
+
+        return View(recettes);
     }
 
     public IActionResult Privacy()

@@ -7,7 +7,7 @@
         <!-- Avant-propos Section -->
         <div class="bg-white shadow-xl overflow-hidden border-t-4 border-accent">
             <!-- Titre style journal -->
-            <div class="bg-white px-8 py-8">
+            <div class="bg-white px-8 py-8 fade-in-down">
                 <div>
                     <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">Avant-propos</p>
                     <h1 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
@@ -17,7 +17,7 @@
             </div>
         
             <!-- Layout avec image à gauche et texte à droite -->
-            <div class="flex flex-col lg:flex-row">
+            <div class="flex flex-col lg:flex-row fade-in">
                 <!-- Image à gauche -->
                 <div class="lg:w-1/3 flex-shrink-0 pl-8">
                     <img src="~/img/accueil.png" alt="Budget des Citoyens" class="w-full h-full object-cover" />
@@ -26,32 +26,32 @@
                 <!-- Texte à droite -->
                 <div class="lg:w-2/3 p-8 md:p-12">
                     <div class="prose prose-lg max-w-none">
-                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                        <p class="fade-in-left text-gray-700 leading-relaxed mb-6 text-justify">
                             Le <strong class="text-primary">Ministère de l'Économie et des Finances</strong> présente le <strong>Budget des Citoyens 2025</strong>, 
                             une version simplifiée et facilement accessible de la Loi de Finances. Ce document a été conçu pour permettre à tous les citoyens 
                             de comprendre les grandes orientations budgétaires de l'État.
                         </p>
                         
-                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                        <p class="fade-in-left text-gray-700 leading-relaxed mb-6 text-justify">
                             Avec un langage clair et des explications simples, le Budget des Citoyens reflète l'engagement du gouvernement à promouvoir 
                             la <strong class="text-primary">transparence</strong> et à rapprocher les citoyens de la gestion des finances publiques. 
                             Il met en lumière les priorités économiques et sociales définies pour 2025 et de passage, met en exergue comment les ressources 
                             publiques sont utilisées pour répondre aux besoins de la population.
                         </p>
                         
-                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                        <p class="fade-in-left text-gray-700 leading-relaxed mb-6 text-justify">
                             Au fil des années, des efforts constants ont permis d'améliorer ce document, notamment en simplifiant les termes complexes 
                             et en présentant les informations essentielles comme les grandes catégories de dépenses de manière compréhensible pour tous.
                         </p>
                         
-                        <div class="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
+                        <div class="fade-in-left bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
                             <p class="text-gray-700 leading-relaxed text-justify">
                                 <strong class="text-primary">Disponible en malagasy et en français</strong>, ce Budget des Citoyens sera diffusé largement 
                                 sur les plateformes numériques et dans des espaces publics dans tout Madagascar.
                             </p>
                         </div>
                         
-                        <p class="text-gray-700 leading-relaxed text-justify font-medium">
+                        <p class="fade-in-left text-gray-700 leading-relaxed text-justify font-medium">
                             Ainsi, tout un chacun est sollicité de partager ce Budget des citoyens afin d'atteindre la finalité qui est 
                             la <strong class="text-primary">transparence budgétaire</strong>.
                         </p>
@@ -73,23 +73,12 @@
             </div>
         
         <div class="p-8 md:p-12">
-            <!-- Croissance principale -->
-            <div class="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 mb-8 border-2 border-primary/20">
-                <div class="flex items-center justify-center mb-4">
-                    <div class="text-center">
-                        <div class="text-6xl md:text-7xl font-bold text-primary mb-2">5,0%</div>
-                        <p class="text-lg text-gray-700 font-semibold">Croissance économique prévue en 2025</p>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-center mt-4">
-                    Soutenue par des performances solides dans plusieurs secteurs stratégiques
-                </p>
-            </div>
-
-            <!-- Secteurs stratégiques -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Layout: secteurs à gauche et 5,0% à droite -->
+            <div class="flex flex-col lg:flex-row gap-8 mb-8">
+                <!-- Secteurs stratégiques à gauche (en colonne) -->
+                <div class="lg:w-2/3 flex flex-col gap-6">
                 <!-- Agriculture -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent hover:shadow-2xl transition-all duration-300">
+                <div class="fade-in-down bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent hover:shadow-2xl transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +97,7 @@
                 </div>
 
                 <!-- Industrie extractive -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary hover:shadow-2xl transition-all duration-300">
+                <div class="fade-in-down bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary hover:shadow-2xl transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +116,7 @@
                 </div>
 
                 <!-- Secteur tertiaire -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary hover:shadow-2xl transition-all duration-300">
+                <div class="fade-in-down bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary hover:shadow-2xl transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,6 +132,20 @@
                     <p class="text-sm text-gray-600">
                         Initiatives pour attirer davantage de <strong class="text-primary">touristes</strong> et développer les infrastructures numériques
                     </p>
+                </div>
+                </div>
+
+                <!-- Croissance principale à droite -->
+                <div class="lg:w-1/3 flex-shrink-0 fade-in-right">
+                    <div class="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 border-2 border-primary/20 h-full flex flex-col justify-center">
+                        <div class="text-center">
+                            <div class="text-7xl md:text-8xl font-bold text-primary mb-4">5,0%</div>
+                            <p class="text-xl text-gray-700 font-semibold mb-4">Croissance économique prévue en 2025</p>
+                            <p class="text-gray-600">
+                                Soutenue par des performances solides dans plusieurs secteurs stratégiques
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

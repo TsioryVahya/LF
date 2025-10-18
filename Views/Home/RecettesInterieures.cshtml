@@ -1,0 +1,148 @@
+@model IEnumerable<LF.Models.RecettesInterieurs>
+
+@{
+    ViewData["Title"] = "Recettes Intérieures";
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <!-- Banner avec titre -->
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg">
+            <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
+                    Recettes Fiscales Intérieures
+                </h1>
+            </div>
+        </div>
+
+        <!-- Contenu Section -->
+        <div class="bg-white shadow-xl overflow-hidden">
+
+            <!-- Contenu -->
+            <div class="p-8 md:p-12">
+                <!-- Texte introductif -->
+                <div class="mb-8">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        L'Administration prévoit un taux de pression brute de <strong class="text-primary">11,2%</strong> grâce à une augmentation des recettes fiscales de 
+                        <strong class="text-primary">21,39%</strong> par rapport à 2024, soit un objectif de <strong class="text-primary">5 628,4 milliards d'Ariary</strong>. 
+                        La stratégie repose sur la digitalisation des services, la promotion de la gouvernance et de l'intégrité, et l'élargissement de l'assiette fiscale.
+                    </p>
+                </div>
+
+                <!-- Tableau des recettes -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300 shadow-lg">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    Nature d'Impôts
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    LFR 2024
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider">
+                                    LF 2025
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            @{
+                                var groupedRecettes = Model.GroupBy(r => r.NatureImpot.Nom);
+                                decimal totalLFR2024 = 0;
+                                decimal totalLF2025 = 0;
+                            }
+
+                            @foreach (var group in groupedRecettes)
+                            {
+                                var lfr2024 = group.FirstOrDefault(r => r.Annee == 2024);
+                                var lf2025 = group.FirstOrDefault(r => r.Annee == 2025);
+
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-medium">
+                                        @group.Key
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lfr2024 != null)
+                                        {
+                                            totalLFR2024 += lfr2024.Montant;
+                                            @lfr2024.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lf2025 != null)
+                                        {
+                                            totalLF2025 += lf2025.Montant;
+                                            @lf2025.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+
+                            <!-- Ligne TOTAL -->
+                            <tr class="bg-accent text-primary font-bold">
+                                <td class="px-6 py-4 text-sm uppercase">
+                                    TOTAL
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLFR2024.ToString("N1")
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLF2025.ToString("N1")
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Note explicative -->
+                <div class="mt-8 bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
+                    <h3 class="text-lg font-bold text-primary mb-3">L'élargissement de l'assiette fiscale :</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Soumission de nouveaux produits au droit d'accise, dont les plastiques et les cigarettes électroniques ;</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Ajustement des tarifs fiscaux pour les produits alcooliques et le tabac ;</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Révision de la TVA sur les importations et ventes de gaz butanes, fixée à 10% ;</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-gray-700 font-medium">
+                        Ces mesures devraient générer des recettes complémentaires de <strong class="text-primary">784,3 milliards d'Ariary</strong>, 
+                        tout en renforçant les capacités de mobilisation des ressources des Collectivités Territoriales Décentralisées.
+                    </p>
+                </div>
+
+                <!-- Bouton retour -->
+                <div class="mt-8 text-center">
+                    <a asp-controller="Home" asp-action="Index" 
+                       class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+/* Animations CSS pour les éléments au scroll */
+
+/* Fade in depuis le bas vers le haut */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade in depuis le haut vers le bas */
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-down.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade in depuis la gauche */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade in depuis la droite */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade in simple (opacité seulement) */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.2s ease-out;
+}
+
+.fade-in.animate {
+    opacity: 1;
+}

@@ -42,7 +42,7 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.Montant).HasColumnName("montant").HasPrecision(15, 2).IsRequired();
             entity.Property(e => e.IdNatureImpots).HasColumnName("idnatureimpots").IsRequired();
             
-            entity.HasOne(e => e.NatureImpots)
+            entity.HasOne(e => e.NatureImpot)
                 .WithMany(n => n.RecettesInterieurs)
                 .HasForeignKey(e => e.IdNatureImpots)
                 .HasConstraintName("fk_recettes_interieurs_nature")

@@ -186,3 +186,5 @@ G:\ITU\S5\WEB\git\LF\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.
 G:\ITU\S5\WEB\git\LF\obj\Debug\net9.0\LF.csproj.AssemblyReference.cache
 G:\ITU\S5\WEB\git\LF\obj\Debug\net9.0\compressed\b1z3tsfw94-0oeuki0bj6.gz
 G:\ITU\S5\WEB\git\LF\obj\Debug\net9.0\LF.csproj.Up2Date
+G:\ITU\S5\WEB\git\LF\obj\Debug\net9.0\compressed\19o6pe9vrg-ke177uq8da.gz
+G:\ITU\S5\WEB\git\LF\obj\Debug\net9.0\compressed\sg8l5ec4ql-tdn4r0u347.gz

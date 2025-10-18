@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\LF.abticm1g15.bundle.scp.css"
     },
     {
+      "Id": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css",
+      "PackagePath": "staticwebassets\\css\\animations.css"
+    },
+    {
       "Id": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js",
+      "PackagePath": "staticwebassets\\js\\animations.js"
     },
     {
       "Id": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\site.js",

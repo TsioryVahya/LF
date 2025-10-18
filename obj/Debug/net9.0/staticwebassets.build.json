@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z+OmByKHAZC+wIAiWciH0Vl4UDJpzIboSrF/DLVJPRY=",
+  "Hash": "jwNxdCX8ckVITWK8asEpKpiOmLahURdcGDwATgTbadc=",
   "Source": "LF",
   "BasePath": "_content/LF",
   "Mode": "Default",
@@ -162,6 +162,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\19o6pe9vrg-ke177uq8da.gz",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "css/animations#[.{fingerprint=ke177uq8da}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "d01fj0mtpz",
+      "Integrity": "I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css"
     },
     {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\2hzq67x9l0-rzd6atqjts.gz",
@@ -1193,6 +1214,27 @@
       "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\sg8l5ec4ql-tdn4r0u347.gz",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "js/animations#[.{fingerprint=tdn4r0u347}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "xzz4d2vqco",
+      "Integrity": "w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js"
+    },
+    {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\tobc9p3q6s-ag7o75518u.gz",
       "SourceId": "LF",
       "SourceType": "Discovered",
@@ -1403,6 +1445,27 @@
       "OriginalItemSpec": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\LF.bundle.scp.css"
     },
     {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "css/animations#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ke177uq8da",
+      "Integrity": "3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\animations.css"
+    },
+    {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\site.css",
       "SourceId": "LF",
       "SourceType": "Discovered",
@@ -1485,6 +1548,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    },
+    {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "js/animations#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdn4r0u347",
+      "Integrity": "Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\animations.js"
     },
     {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\site.js",
@@ -2770,6 +2854,304 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/animations.css",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\19o6pe9vrg-ke177uq8da.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003355704698"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM="
+        }
+      ]
+    },
+    {
+      "Route": "css/animations.css",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1156"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM="
+        }
+      ]
+    },
+    {
+      "Route": "css/animations.css.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\19o6pe9vrg-ke177uq8da.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo="
+        }
+      ]
+    },
+    {
+      "Route": "css/animations.ke177uq8da.css",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\19o6pe9vrg-ke177uq8da.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003355704698"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ke177uq8da"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animations.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM="
+        }
+      ]
+    },
+    {
+      "Route": "css/animations.ke177uq8da.css",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\css\\animations.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1156"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ke177uq8da"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animations.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3EE2Wm20dgQvPqzvCeAEziIefdjposo3Yit9SJ0ORTM="
+        }
+      ]
+    },
+    {
+      "Route": "css/animations.ke177uq8da.css.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\19o6pe9vrg-ke177uq8da.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:46:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ke177uq8da"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animations.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I7qAFf3rqFH/3k+kIXxrxRgW9hQ3hhvhEShi58FoLoo="
+        }
+      ]
+    },
+    {
       "Route": "css/site.0oeuki0bj6.css",
       "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\b1z3tsfw94-0oeuki0bj6.gz",
       "Selectors": [
@@ -3526,6 +3908,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-flJ4WTUV7PctiU2lCWJDWDPSjg2B05+zsa2OI/MV5Q0="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.js",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\sg8l5ec4ql-tdn4r0u347.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001449275362"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "689"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.js",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.js.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\sg8l5ec4ql-tdn4r0u347.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "689"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.tdn4r0u347.js",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\sg8l5ec4ql-tdn4r0u347.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001449275362"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "689"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdn4r0u347"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animations.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.tdn4r0u347.js",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\js\\animations.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdn4r0u347"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animations.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yep1XZzVuUZYdb8yd2wfDfOAHCBxscpkEee+POjT2MA="
+        }
+      ]
+    },
+    {
+      "Route": "js/animations.tdn4r0u347.js.gz",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\Debug\\net9.0\\compressed\\sg8l5ec4ql-tdn4r0u347.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "689"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:47:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdn4r0u347"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animations.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4uon7z7uAb9K1FqGBCAvyvAz010sz8QXjasJ1IF4UY="
         }
       ]
     },

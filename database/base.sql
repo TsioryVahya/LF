@@ -3,7 +3,7 @@
 -- ========================================
 CREATE TABLE NatureImpots (
     idNatureImpots SERIAL PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL
+    nom VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE RecettesInterieurs (
@@ -22,7 +22,7 @@ CREATE TABLE RecettesInterieurs (
 -- ========================================
 CREATE TABLE NatureDroitsetTaxes (
     idNatureDroitsetTaxes SERIAL PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL
+    nom VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE RecettesDouanieres (
@@ -41,7 +41,7 @@ CREATE TABLE RecettesDouanieres (
 -- ========================================
 CREATE TABLE NatureRecettesNonFiscales (
     idNatureRecettesNonFiscales SERIAL PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL
+    nom VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE RecettesNonFiscales (
@@ -60,7 +60,7 @@ CREATE TABLE RecettesNonFiscales (
 -- ========================================
 CREATE TABLE NatureDons (
     idNatureDons SERIAL PRIMARY KEY,
-    nom VARCHAR(50) NOT NULL
+    nom VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Dons (
