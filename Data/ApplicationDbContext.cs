@@ -10,7 +10,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    // Tables
+    // Tables - Recettes
     public DbSet<NatureImpots> NatureImpots { get; set; }
     public DbSet<RecettesInterieurs> RecettesInterieurs { get; set; }
     public DbSet<NatureDroitsetTaxes> NatureDroitsetTaxes { get; set; }
@@ -19,6 +19,15 @@ public class ApplicationDbContext : DbContext
     public DbSet<RecettesNonFiscales> RecettesNonFiscales { get; set; }
     public DbSet<NatureDons> NatureDons { get; set; }
     public DbSet<Dons> Dons { get; set; }
+
+    // Tables - Dépenses
+    public DbSet<NatureDepenses> NatureDepenses { get; set; }
+    public DbSet<DepensesParNature> DepensesParNature { get; set; }
+    public DbSet<DepensesSoldePensions> DepensesSoldePensions { get; set; }
+    public DbSet<DepensesFonctionnement> DepensesFonctionnement { get; set; }
+    public DbSet<DepensesInvestissement> DepensesInvestissement { get; set; }
+    public DbSet<DepensesAdministratives> DepensesAdministratives { get; set; }
+    public DbSet<DeficitBudgetaire> DeficitBudgetaire { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -119,6 +128,89 @@ public class ApplicationDbContext : DbContext
                 .HasForeignKey(e => e.IdNatureDons)
                 .HasConstraintName("fk_dons_nature")
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Configuration des tables de dépenses
+        modelBuilder.Entity<NatureDepenses>(entity =>
+        {
+            entity.ToTable("naturedepenses");
+            entity.HasKey(e => e.IdNatureDepenses);
+            entity.Property(e => e.IdNatureDepenses).HasColumnName("idnaturedepenses");
+            entity.Property(e => e.Nom).HasColumnName("nom").HasMaxLength(250).IsRequired();
+        });
+
+        modelBuilder.Entity<DepensesParNature>(entity =>
+        {
+            entity.ToTable("depensesparnature");
+            entity.HasKey(e => e.IdDepensesParNature);
+            entity.Property(e => e.IdDepensesParNature).HasColumnName("iddepensesparnature");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.Montant).HasColumnName("montant").HasPrecision(15, 2).IsRequired();
+            entity.Property(e => e.IdNatureDepenses).HasColumnName("idnaturedepenses").IsRequired();
+            
+            entity.HasOne(e => e.NatureDepenses)
+                .WithMany(n => n.DepensesParNature)
+                .HasForeignKey(e => e.IdNatureDepenses)
+                .HasConstraintName("fk_depenses_nature")
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<DepensesSoldePensions>(entity =>
+        {
+            entity.ToTable("depensessoldepensions");
+            entity.HasKey(e => e.IdDepensesSolde);
+            entity.Property(e => e.IdDepensesSolde).HasColumnName("iddepensessolde");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.Montant).HasColumnName("montant").HasPrecision(15, 2).IsRequired();
+            entity.Property(e => e.SoldePib).HasColumnName("solde_pib").HasPrecision(5, 2);
+            entity.Property(e => e.SoldeRecettesFiscales).HasColumnName("solde_recettes_fiscales").HasPrecision(5, 2);
+            entity.Property(e => e.SoldeDepensesTotales).HasColumnName("solde_depenses_totales").HasPrecision(5, 2);
+        });
+
+        modelBuilder.Entity<DepensesFonctionnement>(entity =>
+        {
+            entity.ToTable("depensesfonctionnement");
+            entity.HasKey(e => e.IdDepensesFonctionnement);
+            entity.Property(e => e.IdDepensesFonctionnement).HasColumnName("iddepensesfonctionnement");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.Indemnites).HasColumnName("indemnites").HasPrecision(15, 2);
+            entity.Property(e => e.BiensServices).HasColumnName("biens_services").HasPrecision(15, 2);
+            entity.Property(e => e.Transferts).HasColumnName("transferts").HasPrecision(15, 2);
+            entity.Property(e => e.Total).HasColumnName("total").HasPrecision(15, 2);
+        });
+
+        modelBuilder.Entity<DepensesInvestissement>(entity =>
+        {
+            entity.ToTable("depensesinvestissement");
+            entity.HasKey(e => e.IdDepensesInvestissement);
+            entity.Property(e => e.IdDepensesInvestissement).HasColumnName("iddepensesinvestissement");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.FinancementInterne).HasColumnName("financement_interne").HasPrecision(15, 2);
+            entity.Property(e => e.FinancementExterne).HasColumnName("financement_externe").HasPrecision(15, 2);
+            entity.Property(e => e.Total).HasColumnName("total").HasPrecision(15, 2);
+        });
+
+        modelBuilder.Entity<DepensesAdministratives>(entity =>
+        {
+            entity.ToTable("depensesadministratives");
+            entity.HasKey(e => e.IdDepensesAdministratives);
+            entity.Property(e => e.IdDepensesAdministratives).HasColumnName("iddepensesadministratives");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.Institution).HasColumnName("institution").HasMaxLength(250).IsRequired();
+            entity.Property(e => e.Montant).HasColumnName("montant").HasPrecision(15, 2).IsRequired();
+        });
+
+        modelBuilder.Entity<DeficitBudgetaire>(entity =>
+        {
+            entity.ToTable("deficitbudgetaire");
+            entity.HasKey(e => e.IdDeficit);
+            entity.Property(e => e.IdDeficit).HasColumnName("iddeficit");
+            entity.Property(e => e.Annee).HasColumnName("annee").IsRequired();
+            entity.Property(e => e.DepensesTotales).HasColumnName("depenses_totales").HasPrecision(15, 2);
+            entity.Property(e => e.RecettesTotales).HasColumnName("recettes_totales").HasPrecision(15, 2);
+            entity.Property(e => e.Deficit).HasColumnName("deficit").HasPrecision(15, 2);
+            entity.Property(e => e.FinancementExterieur).HasColumnName("financement_exterieur").HasPrecision(15, 2);
+            entity.Property(e => e.FinancementInterieur).HasColumnName("financement_interieur").HasPrecision(15, 2);
         });
     }
 }

@@ -1,0 +1,236 @@
+@model IEnumerable<LF.Models.DepensesParNature>
+
+@{
+    ViewData["Title"] = "Dépenses par Nature";
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <!-- Banner avec titre -->
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg fade-in-down">
+            <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
+                    Dépenses par Nature Économique
+                </h1>
+            </div>
+        </div>
+
+        <!-- Contenu Section -->
+        <div class="bg-white shadow-xl overflow-hidden">
+
+            <!-- Contenu -->
+            <div class="p-8 md:p-12">
+                <!-- Texte introductif -->
+                <div class="mb-8 bg-white border-l-4 border-primary p-6 rounded-r-lg fade-in-left">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Les dépenses totales pour 2025 s'élèvent à <strong class="text-primary">16 304,9 milliards d'Ariary</strong>, 
+                        soit une augmentation de <strong class="text-primary">27,9%</strong> par rapport à 2024. 
+                        Cette ventilation par nature économique permet d'analyser la structure des dépenses publiques.
+                    </p>
+                </div>
+
+                <!-- Boutons de filtre -->
+                <div class="mb-6 flex justify-center gap-4 fade-in-up">
+                    <button onclick="filterTable('all')" id="btn-all" class="px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        Toutes les années
+                    </button>
+                    <button onclick="filterTable('2024')" id="btn-2024" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LFR 2024
+                    </button>
+                    <button onclick="filterTable('2025')" id="btn-2025" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LF 2025
+                    </button>
+                </div>
+
+                <!-- Tableau des dépenses -->
+                <div class="overflow-x-auto fade-in-up">
+                    <table id="depensesTable" class="min-w-full bg-white border border-gray-300 shadow-lg">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    Nature des Dépenses
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    LFR 2024
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    LF 2025
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider">
+                                    Évolution (%)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            @{
+                                var groupedDepenses = Model.GroupBy(d => d.NatureDepenses.Nom);
+                                decimal totalLFR2024 = 0;
+                                decimal totalLF2025 = 0;
+                            }
+
+                            @foreach (var group in groupedDepenses)
+                            {
+                                var lfr2024 = group.FirstOrDefault(d => d.Annee == 2024);
+                                var lf2025 = group.FirstOrDefault(d => d.Annee == 2025);
+
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-medium">
+                                        @group.Key
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lfr2024 != null)
+                                        {
+                                            totalLFR2024 += lfr2024.Montant;
+                                            @lfr2024.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lf2025 != null)
+                                        {
+                                            totalLF2025 += lf2025.Montant;
+                                            @lf2025.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-right font-semibold">
+                                        @if (lfr2024 != null && lf2025 != null && lfr2024.Montant > 0)
+                                        {
+                                            var evolution = ((lf2025.Montant - lfr2024.Montant) / lfr2024.Montant) * 100;
+                                            var colorClass = evolution >= 0 ? "text-green-600" : "text-red-600";
+                                            <span class="@colorClass">
+                                                @evolution.ToString("N1")%
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+
+                            <!-- Ligne TOTAL -->
+                            <tr class="bg-accent text-primary font-bold">
+                                <td class="px-6 py-4 text-sm uppercase">
+                                    TOTAL
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLFR2024.ToString("N1")
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLF2025.ToString("N1")
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @{
+                                        var totalEvolution = ((totalLF2025 - totalLFR2024) / totalLFR2024) * 100;
+                                    }
+                                    @totalEvolution.ToString("N1")%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Note explicative -->
+                <div class="mt-8 bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg fade-in-right">
+                    <h3 class="text-lg font-bold text-primary mb-3">Points clés de la structure des dépenses :</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Les dépenses d'investissement connaissent une forte augmentation de 76,5% pour atteindre 8 537,2 milliards d'Ariary</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Les dépenses de fonctionnement (hors solde) diminuent de 24,9% dans une logique d'optimisation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Les intérêts de la dette augmentent de 12,6% reflétant l'évolution de l'endettement public</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bouton retour -->
+                <div class="mt-8 text-center">
+                    <a asp-controller="Home" asp-action="Index" 
+                       class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterTable(year) {
+        const table = document.getElementById('depensesTable');
+        const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        const headers = table.getElementsByTagName('thead')[0].getElementsByTagName('th');
+        
+        // Mettre à jour les styles des boutons
+        document.getElementById('btn-all').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2024').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2025').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        
+        if (year === 'all') {
+            document.getElementById('btn-all').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = '';
+            headers[2].style.display = '';
+            headers[3].style.display = '';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 4) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = '';
+                    cells[3].style.display = '';
+                }
+            }
+        } else if (year === '2024') {
+            document.getElementById('btn-2024').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = '';
+            headers[2].style.display = 'none';
+            headers[3].style.display = 'none';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 4) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = 'none';
+                    cells[3].style.display = 'none';
+                }
+            }
+        } else if (year === '2025') {
+            document.getElementById('btn-2025').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = 'none';
+            headers[2].style.display = '';
+            headers[3].style.display = 'none';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 4) {
+                    cells[1].style.display = 'none';
+                    cells[2].style.display = '';
+                    cells[3].style.display = 'none';
+                }
+            }
+        }
+    }
+</script>

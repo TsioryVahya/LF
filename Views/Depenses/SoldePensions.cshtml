@@ -1,0 +1,57 @@
+@model IEnumerable<LF.Models.DepensesSoldePensions>
+
+@{
+    ViewData["Title"] = "Dépenses de Solde et Pensions";
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg fade-in-down">
+            <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
+                    Dépenses de Solde et Pensions
+                </h1>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-xl overflow-hidden">
+            <div class="p-8 md:p-12">
+                <div class="overflow-x-auto fade-in-up">
+                    <table class="min-w-full bg-white border border-gray-300 shadow-lg">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold uppercase">Année</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">Montant</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">% PIB</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">% Recettes Fiscales</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">% Dépenses Totales</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm font-medium">@item.Annee</td>
+                                    <td class="px-6 py-4 text-sm text-right font-bold">@item.Montant.ToString("N1")</td>
+                                    <td class="px-6 py-4 text-sm text-right">@item.SoldePib?.ToString("N1")%</td>
+                                    <td class="px-6 py-4 text-sm text-right">@item.SoldeRecettesFiscales?.ToString("N1")%</td>
+                                    <td class="px-6 py-4 text-sm text-right">@item.SoldeDepensesTotales?.ToString("N1")%</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a asp-controller="Home" asp-action="Index" 
+                       class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
