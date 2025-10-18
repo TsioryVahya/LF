@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jayshga1TKwRz4cecZPxkAPYwONJ0nXcGvoY/scYUlM=",
+  "Hash": "Z+OmByKHAZC+wIAiWciH0Vl4UDJpzIboSrF/DLVJPRY=",
   "Source": "LF",
   "BasePath": "_content/LF",
   "Mode": "Default",
@@ -1443,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\accueil.png",
+      "SourceId": "LF",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\",
+      "BasePath": "_content/LF",
+      "RelativePath": "img/accueil#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oylz8g81a2",
+      "Integrity": "EJ7GHMpIUba6LPzAg6S3AimrPc8GvCMYRYan5Y/Ee3w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\accueil.png"
     },
     {
       "Identity": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\logo.png",
@@ -3341,6 +3362,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/accueil.oylz8g81a2.png",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\accueil.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "504807"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EJ7GHMpIUba6LPzAg6S3AimrPc8GvCMYRYan5Y/Ee3w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:09:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oylz8g81a2"
+        },
+        {
+          "Name": "label",
+          "Value": "img/accueil.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EJ7GHMpIUba6LPzAg6S3AimrPc8GvCMYRYan5Y/Ee3w="
+        }
+      ]
+    },
+    {
+      "Route": "img/accueil.png",
+      "AssetFile": "G:\\ITU\\S5\\WEB\\git\\LF\\wwwroot\\img\\accueil.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "504807"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EJ7GHMpIUba6LPzAg6S3AimrPc8GvCMYRYan5Y/Ee3w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 18 Oct 2025 13:09:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EJ7GHMpIUba6LPzAg6S3AimrPc8GvCMYRYan5Y/Ee3w="
         }
       ]
     },

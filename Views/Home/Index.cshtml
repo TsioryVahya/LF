@@ -2,122 +2,195 @@
     ViewData["Title"] = "Accueil";
 }
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Hero Section -->
-    <div class="text-center mb-16">
-        <div class="inline-block bg-accent/20 px-6 py-2 rounded-full mb-4">
-            <span class="text-primary font-semibold text-sm uppercase tracking-wide">Exercice Fiscal 2025</span>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Tableau de Bord des Recettes Budgétaires
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Système de gestion et de suivi transparent des recettes de l'État malgache
-        </p>
-        <div class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-lg shadow-lg inline-block">
-            <p class="text-lg font-semibold">Budget de Consolidation et de Croissance</p>
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <!-- Avant-propos Section -->
+        <div class="bg-white shadow-xl overflow-hidden border-t-4 border-accent">
+            <!-- Titre style journal -->
+            <div class="bg-white px-8 py-8">
+                <div>
+                    <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">Avant-propos</p>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                        Budget des Citoyens - Loi de Finances 2025
+                    </h1>
+                </div>
+            </div>
+        
+            <!-- Layout avec image à gauche et texte à droite -->
+            <div class="flex flex-col lg:flex-row">
+                <!-- Image à gauche -->
+                <div class="lg:w-1/3 flex-shrink-0 pl-8">
+                    <img src="~/img/accueil.png" alt="Budget des Citoyens" class="w-full h-full object-cover" />
+                </div>
+                
+                <!-- Texte à droite -->
+                <div class="lg:w-2/3 p-8 md:p-12">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                            Le <strong class="text-primary">Ministère de l'Économie et des Finances</strong> présente le <strong>Budget des Citoyens 2025</strong>, 
+                            une version simplifiée et facilement accessible de la Loi de Finances. Ce document a été conçu pour permettre à tous les citoyens 
+                            de comprendre les grandes orientations budgétaires de l'État.
+                        </p>
+                        
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                            Avec un langage clair et des explications simples, le Budget des Citoyens reflète l'engagement du gouvernement à promouvoir 
+                            la <strong class="text-primary">transparence</strong> et à rapprocher les citoyens de la gestion des finances publiques. 
+                            Il met en lumière les priorités économiques et sociales définies pour 2025 et de passage, met en exergue comment les ressources 
+                            publiques sont utilisées pour répondre aux besoins de la population.
+                        </p>
+                        
+                        <p class="text-gray-700 leading-relaxed mb-6 text-justify">
+                            Au fil des années, des efforts constants ont permis d'améliorer ce document, notamment en simplifiant les termes complexes 
+                            et en présentant les informations essentielles comme les grandes catégories de dépenses de manière compréhensible pour tous.
+                        </p>
+                        
+                        <div class="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
+                            <p class="text-gray-700 leading-relaxed text-justify">
+                                <strong class="text-primary">Disponible en malagasy et en français</strong>, ce Budget des Citoyens sera diffusé largement 
+                                sur les plateformes numériques et dans des espaces publics dans tout Madagascar.
+                            </p>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed text-justify font-medium">
+                            Ainsi, tout un chacun est sollicité de partager ce Budget des citoyens afin d'atteindre la finalité qui est 
+                            la <strong class="text-primary">transparence budgétaire</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Cartes des Catégories -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        <!-- Recettes Intérieures -->
-        <a asp-controller="Home" asp-action="RecettesInterieures" 
-           class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-primary overflow-hidden">
-            <div class="p-8 text-center">
-                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <svg class="w-10 h-10 text-primary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Perspectives économiques Section -->
+        <div class="bg-white shadow-xl overflow-hidden ">
+            <!-- Titre style journal -->
+            <div class="bg-white px-8 py-8">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                        Perspectives économiques
+                    </h2>
+                </div>
+            </div>
+        
+        <div class="p-8 md:p-12">
+            <!-- Croissance principale -->
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 mb-8 border-2 border-primary/20">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="text-center">
+                        <div class="text-6xl md:text-7xl font-bold text-primary mb-2">5,0%</div>
+                        <p class="text-lg text-gray-700 font-semibold">Croissance économique prévue en 2025</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-center mt-4">
+                    Soutenue par des performances solides dans plusieurs secteurs stratégiques
+                </p>
+            </div>
+
+            <!-- Secteurs stratégiques -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Agriculture -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Agriculture</h3>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-4xl font-bold text-accent">9,5%</span>
+                        <span class="text-gray-600 ml-2">de croissance</span>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        Production de riz amélioré avec un rendement de plus de <strong class="text-primary">8 tonnes par hectare</strong>
+                    </p>
+                </div>
+
+                <!-- Industrie extractive -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Industrie extractive</h3>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-4xl font-bold text-secondary">4,0%</span>
+                        <span class="text-gray-600 ml-2">de croissance</span>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        Demande accrue liée aux <strong class="text-primary">énergies renouvelables</strong> et batteries pour véhicules électriques
+                    </p>
+                </div>
+
+                <!-- Secteur tertiaire -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Secteur tertiaire</h3>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-4xl font-bold text-primary">5,4%</span>
+                        <span class="text-gray-600 ml-2">de croissance</span>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        Initiatives pour attirer davantage de <strong class="text-primary">touristes</strong> et développer les infrastructures numériques
+                    </p>
+                </div>
+            </div>
+
+            <!-- Services publics -->
+            <div class="bg-gradient-to-r from-accent/10 to-secondary/10 rounded-xl p-8 border-2 border-accent/30">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Qualité des services publics</h3>
+                        <p class="text-gray-700 mb-4">
+                            Pour assurer une qualité des services publics efficace et pérenne, l'État envisage en 2025 d'aménager :
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-white rounded-lg px-6 py-3 shadow-md">
+                                <div class="text-3xl font-bold text-primary">6 650</div>
+                                <div class="text-sm text-gray-600">postes budgétaires</div>
+                            </div>
+                            <div class="bg-white rounded-lg px-6 py-3 shadow-md">
+                                <div class="text-3xl font-bold text-secondary">2 150</div>
+                                <div class="text-sm text-gray-600">recrutements par concours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a asp-controller="Home" asp-action="RecettesInterieures" 
+                   class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Recettes Intérieures</h3>
-                <p class="text-sm text-gray-600 mb-4">Impôts et taxes collectés sur le territoire national</p>
-                <span class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold group-hover:bg-secondary group-hover:text-primary transition-colors">
-                    Consulter →
-                </span>
-            </div>
-        </a>
-
-        <!-- Recettes Douanières -->
-        <a asp-controller="Home" asp-action="RecettesDouanieres" 
-           class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-secondary overflow-hidden">
-            <div class="p-8 text-center">
-                <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
-                    <svg class="w-10 h-10 text-secondary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    Explorer les Recettes
+                </a>
+                <a asp-controller="Home" asp-action="Depenses" 
+                   class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary font-semibold rounded-lg border-2 border-primary hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Recettes Douanières</h3>
-                <p class="text-sm text-gray-600 mb-4">Droits et taxes perçus aux frontières</p>
-                <span class="inline-block bg-secondary text-white px-4 py-2 rounded-lg text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
-                    Consulter →
-                </span>
+                    Consulter les Dépenses
+                </a>
             </div>
-        </a>
-
-        <!-- Recettes Non Fiscales -->
-        <a asp-controller="Home" asp-action="RecettesNonFiscales" 
-           class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-accent overflow-hidden">
-            <div class="p-8 text-center">
-                <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                    <svg class="w-10 h-10 text-accent group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Recettes Non Fiscales</h3>
-                <p class="text-sm text-gray-600 mb-4">Revenus des services publics et domaines</p>
-                <span class="inline-block bg-accent text-primary px-4 py-2 rounded-lg text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
-                    Consulter →
-                </span>
-            </div>
-        </a>
-
-        <!-- Dons -->
-        <a asp-controller="Home" asp-action="Dons" 
-           class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-primary overflow-hidden">
-            <div class="p-8 text-center">
-                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <svg class="w-10 h-10 text-primary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Dons</h3>
-                <p class="text-sm text-gray-600 mb-4">Aides et subventions des partenaires</p>
-                <span class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold group-hover:bg-secondary group-hover:text-primary transition-colors">
-                    Consulter →
-                </span>
-            </div>
-        </a>
-    </div>
-
-    <!-- Section À Propos -->
-    <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-accent">
-            <div class="bg-gradient-to-r from-primary to-secondary px-8 py-6">
-                <h2 class="text-2xl font-bold text-white">À propos de la Loi de Finances 2025</h2>
-            </div>
-            <div class="p-8">
-                <p class="text-gray-700 leading-relaxed mb-8">
-                    La Loi de Finances 2025 de la République de Madagascar s'inscrit dans une dynamique de 
-                    consolidation budgétaire et de croissance économique. Elle vise à mobiliser les ressources 
-                    nécessaires pour financer les politiques publiques et les investissements prioritaires.
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center p-6 bg-primary/5 rounded-xl border-2 border-primary/20">
-                        <div class="text-5xl font-bold text-primary mb-2">4</div>
-                        <p class="text-sm text-gray-600 font-medium">Catégories de Recettes</p>
-                    </div>
-                    <div class="text-center p-6 bg-secondary/5 rounded-xl border-2 border-secondary/20">
-                        <div class="text-5xl font-bold text-secondary mb-2">2025</div>
-                        <p class="text-sm text-gray-600 font-medium">Exercice Fiscal</p>
-                    </div>
-                    <div class="text-center p-6 bg-accent/5 rounded-xl border-2 border-accent/20">
-                        <div class="text-5xl font-bold text-primary mb-2">100%</div>
-                        <p class="text-sm text-gray-600 font-medium">Transparence</p>
-                    </div>
-                </div>
-            </div>
+        </div>
         </div>
     </div>
 </div>

@@ -41,25 +41,47 @@
 
                 <!-- Menu de Navigation à Droite -->
                 <div class="hidden lg:flex items-center space-x-1">
+                    <!-- Accueil -->
                     <a asp-area="" asp-controller="Home" asp-action="Index" 
                        class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
                         Accueil
                     </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                    
+                    <!-- Recettes avec Dropdown -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200 flex items-center">
+                            Recettes
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Recettes Intérieures
+                                </a>
+                                <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Recettes Douanières
+                                </a>
+                                <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Recettes Non Fiscales
+                                </a>
+                                <a asp-area="" asp-controller="Home" asp-action="Dons" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Dons
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dépenses -->
+                    <a asp-area="" asp-controller="Home" asp-action="Depenses" 
                        class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Intérieures
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Douanières
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Non Fiscales
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="Dons" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Dons
+                        Dépenses
                     </a>
                 </div>
 
@@ -76,25 +98,44 @@
             <!-- Menu Mobile Déroulant -->
             <div id="mobile-menu" class="hidden lg:hidden pb-4">
                 <div class="flex flex-col space-y-2">
+                    <!-- Accueil Mobile -->
                     <a asp-area="" asp-controller="Home" asp-action="Index" 
                        class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
                         Accueil
                     </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                    
+                    <!-- Recettes Mobile -->
+                    <div>
+                        <button id="mobile-recettes-toggle" class="w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200 flex items-center justify-between">
+                            Recettes
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-recettes-menu" class="hidden ml-4 mt-2 space-y-2">
+                            <a asp-area="" asp-controller="Home" asp-action="RecettesInterieures" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Recettes Intérieures
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Recettes Douanières
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Recettes Non Fiscales
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="Dons" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Dons
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dépenses Mobile -->
+                    <a asp-area="" asp-controller="Home" asp-action="Depenses" 
                        class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Intérieures
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesDouanieres" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Douanières
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="RecettesNonFiscales" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Recettes Non Fiscales
-                    </a>
-                    <a asp-area="" asp-controller="Home" asp-action="Dons" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Dons
+                        Dépenses
                     </a>
                 </div>
             </div>
@@ -127,10 +168,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const mobileRecettesToggle = document.getElementById('mobile-recettes-toggle');
+            const mobileRecettesMenu = document.getElementById('mobile-recettes-menu');
             
+            // Toggle menu principal mobile
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function() {
                     mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Toggle dropdown Recettes mobile
+            if (mobileRecettesToggle && mobileRecettesMenu) {
+                mobileRecettesToggle.addEventListener('click', function() {
+                    mobileRecettesMenu.classList.toggle('hidden');
                 });
             }
         });
