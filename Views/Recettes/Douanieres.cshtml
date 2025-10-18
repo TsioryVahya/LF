@@ -1,0 +1,333 @@
+@model IEnumerable<LF.Models.RecettesDouanieres>
+
+@{
+    ViewData["Title"] = "Recettes Douanières";
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <!-- Banner avec titre -->
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg fade-in-down">
+            <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
+                    Recettes Douanières
+                </h1>
+            </div>
+        </div>
+
+        <!-- Contenu Section -->
+        <div class="bg-white shadow-xl overflow-hidden">
+
+            <!-- Contenu -->
+            <div class="p-8 md:p-12">
+                <!-- Texte introductif -->
+                <div class="mb-8 bg-white border-l-4  p-6 rounded-r-lg  fade-in-left">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Les recettes douanières constituent une source importante de financement pour l'État. 
+                        Pour 2025, l'objectif est fixé à <strong class="text-primary">4 366,0 milliards d'Ariary</strong>, 
+                        soit une augmentation de <strong class="text-primary">15,9%</strong> par rapport à la LFR 2024.
+                    </p>
+                </div>
+
+                <!-- Boutons de filtre -->
+                <div class="mb-6 flex justify-center gap-4 fade-in-up">
+                    <button onclick="filterTable('all')" id="btn-all" class="px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        Toutes les années
+                    </button>
+                    <button onclick="filterTable('2024')" id="btn-2024" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LFR 2024
+                    </button>
+                    <button onclick="filterTable('2025')" id="btn-2025" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LF 2025
+                    </button>
+                </div>
+
+                <!-- Tableau des recettes -->
+                <div class="overflow-x-auto fade-in-up">
+                    <table id="recettesTable" class="min-w-full bg-white border border-gray-300 shadow-lg">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    Nature des Droits et Taxes
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider border-r border-white/20">
+                                    LFR 2024
+                                </th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase tracking-wider">
+                                    LF 2025
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            @{
+                                var groupedRecettes = Model.GroupBy(r => r.NatureDroitsetTaxes.Nom);
+                                decimal totalLFR2024 = 0;
+                                decimal totalLF2025 = 0;
+                            }
+
+                            @foreach (var group in groupedRecettes)
+                            {
+                                var lfr2024 = group.FirstOrDefault(r => r.Annee == 2024);
+                                var lf2025 = group.FirstOrDefault(r => r.Annee == 2025);
+
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-900 font-medium">
+                                        @group.Key
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lfr2024 != null)
+                                        {
+                                            totalLFR2024 += lfr2024.Montant;
+                                            @lfr2024.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-700 text-right font-semibold">
+                                        @if (lf2025 != null)
+                                        {
+                                            totalLF2025 += lf2025.Montant;
+                                            @lf2025.Montant.ToString("N1")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-gray-400">-</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+
+                            <!-- Ligne TOTAL -->
+                            <tr class="bg-accent text-primary font-bold">
+                                <td class="px-6 py-4 text-sm uppercase">
+                                    TOTAL
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLFR2024.ToString("N1")
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    @totalLF2025.ToString("N1")
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-xs text-gray-500 text-center mt-4">(En milliards d'Ariary)</p>
+                <p class="text-xs text-gray-500 text-center mt-2">Source : LF 2025</p>
+
+                <!-- Section Évolution des recettes -->
+                <div class="mt-12 bg-white p-8 rounded-lg ">
+                    <h2 class="text-2xl font-bold text-primary mb-8 text-center">Évolution des recettes fiscales et douanières</h2>
+                    
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Histogramme à gauche -->
+                        <div class="lg:w-1/2 fade-in-left">
+                            <canvas id="recettesChart"></canvas>
+                            <p class="text-xs text-gray-500 text-center mt-4">(en milliards d'Ariary)</p>
+                        </div>
+                        
+                        <!-- Texte explicatif à droite -->
+                        <div class="lg:w-1/2 flex items-center fade-in-right">
+                            <div class="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
+                                <p class="text-gray-700 leading-relaxed text-justify">
+                                    Les projections des recettes fiscales intérieures pour les années <strong class="text-primary">2025 à 2028</strong> prévoient une croissance progressive, 
+                                    passant de <strong class="text-primary">5 578,4 milliards d'Ariary</strong> en 2025 à <strong class="text-primary">7 571,6 milliards d'Ariary</strong> en 2028, 
+                                    avec des taux de pression fiscale bruts variant entre <strong class="text-primary">6,31 %</strong> et <strong class="text-primary">6,13 %</strong> du PIB.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed text-justify mt-4">
+                                    Pour les recettes douanières, des efforts seront déployés pour poursuivre la digitalisation, la modernisation des infrastructures et la gestion des risques, 
+                                    avec un taux de pression fiscale douanière estimé à <strong class="text-primary">6,1 %</strong> du PIB à moyen terme.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton retour -->
+                <div class="mt-8 text-center">
+                    <a asp-controller="Home" asp-action="Index" 
+                       class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterTable(year) {
+        const table = document.getElementById('recettesTable');
+        const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        const headers = table.getElementsByTagName('thead')[0].getElementsByTagName('th');
+        
+        // Mettre à jour les styles des boutons
+        document.getElementById('btn-all').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2024').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2025').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        
+        if (year === 'all') {
+            document.getElementById('btn-all').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = '';
+            headers[2].style.display = '';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = '';
+                }
+            }
+        } else if (year === '2024') {
+            document.getElementById('btn-2024').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = '';
+            headers[2].style.display = 'none';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = 'none';
+                }
+            }
+        } else if (year === '2025') {
+            document.getElementById('btn-2025').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            headers[1].style.display = 'none';
+            headers[2].style.display = '';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = 'none';
+                    cells[2].style.display = '';
+                }
+            }
+        }
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('recettesChart');
+        
+        // Données depuis le serveur (conversion en nombres JavaScript)
+        const totalInterieures2024 = parseFloat(@Html.Raw(ViewBag.TotalInterieures2024 ?? 0));
+        const totalInterieures2025 = parseFloat(@Html.Raw(ViewBag.TotalInterieures2025 ?? 0));
+        const totalDouanieres2024 = parseFloat(@Html.Raw(ViewBag.TotalDouanieres2024 ?? 0));
+        const totalDouanieres2025 = parseFloat(@Html.Raw(ViewBag.TotalDouanieres2025 ?? 0));
+        
+        console.log('Données:', {
+            totalInterieures2024,
+            totalInterieures2025,
+            totalDouanieres2024,
+            totalDouanieres2025
+        });
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['LFR 2024', 'LF 2025'],
+                datasets: [
+                    {
+                        label: 'Recettes Fiscales Intérieures',
+                        data: [totalInterieures2024, totalInterieures2025],
+                        backgroundColor: 'rgba(27, 136, 149, 0.8)',
+                        borderColor: 'rgba(27, 136, 149, 1)',
+                        borderWidth: 2,
+                        borderRadius: 5
+                    },
+                    {
+                        label: 'Recettes Douanières',
+                        data: [totalDouanieres2024, totalDouanieres2025],
+                        backgroundColor: 'rgba(130, 212, 217, 0.8)',
+                        borderColor: 'rgba(130, 212, 217, 1)',
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }
+                ]
+            },
+            plugins: [ChartDataLabels],
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    datalabels: {
+                        anchor: 'center',
+                        align: 'center',
+                        color: '#ffffff',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        formatter: function(value) {
+                            return value.toLocaleString('fr-FR', {
+                                minimumFractionDigits: 1,
+                                maximumFractionDigits: 1
+                            }) + ' Mds';
+                        }
+                    },
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            padding: 20
+                        }
+                    },
+                    title: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.parsed.y.toFixed(1) + ' milliards Ar';
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString() + ' Mds';
+                            },
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

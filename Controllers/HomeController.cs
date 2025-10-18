@@ -22,18 +22,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public async Task<IActionResult> RecettesInterieures()
-    {
-        // Récupérer les recettes intérieures avec leurs natures d'impôts
-        var recettes = await _context.RecettesInterieurs
-            .Include(r => r.NatureImpot)
-            .OrderBy(r => r.Annee)
-            .ThenBy(r => r.NatureImpot.IdNatureImpots)
-            .ToListAsync();
-
-        return View(recettes);
-    }
-
     public IActionResult Privacy()
     {
         return View();

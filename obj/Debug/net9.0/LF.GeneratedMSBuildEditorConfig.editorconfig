@@ -36,8 +36,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Home/RecettesInterieures.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNldHRlc0ludGVyaWV1cmVzLmNzaHRtbA==
+[G:/ITU/S5/WEB/git/LF/Views/Recettes/Douanieres.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXR0ZXNcRG91YW5pZXJlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/ITU/S5/WEB/git/LF/Views/Recettes/Interieures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXR0ZXNcSW50ZXJpZXVyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/ITU/S5/WEB/git/LF/Views/Shared/Error.cshtml]

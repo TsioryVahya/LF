@@ -7,7 +7,7 @@
 <div class="min-h-screen bg-gray-50">
     <div class="w-full">
         <!-- Banner avec titre -->
-        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg">
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg fade-in-down">
             <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
                 <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
                     Recettes Fiscales Intérieures
@@ -21,7 +21,7 @@
             <!-- Contenu -->
             <div class="p-8 md:p-12">
                 <!-- Texte introductif -->
-                <div class="mb-8">
+                <div class="mb-8 bg-white border-l-4  p-6 rounded-r-lg fade-in-left">
                     <p class="text-gray-700 leading-relaxed text-justify">
                         L'Administration prévoit un taux de pression brute de <strong class="text-primary">11,2%</strong> grâce à une augmentation des recettes fiscales de 
                         <strong class="text-primary">21,39%</strong> par rapport à 2024, soit un objectif de <strong class="text-primary">5 628,4 milliards d'Ariary</strong>. 
@@ -29,9 +29,22 @@
                     </p>
                 </div>
 
+                <!-- Boutons de filtre -->
+                <div class="mb-6 flex justify-center gap-4 fade-in-up">
+                    <button onclick="filterTable('all')" id="btn-all" class="px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        Toutes les années
+                    </button>
+                    <button onclick="filterTable('2024')" id="btn-2024" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LFR 2024
+                    </button>
+                    <button onclick="filterTable('2025')" id="btn-2025" class="px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg">
+                        LF 2025
+                    </button>
+                </div>
+
                 <!-- Tableau des recettes -->
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-300 shadow-lg">
+                <div class="overflow-x-auto fade-in-up">
+                    <table id="recettesTable" class="min-w-full bg-white border border-gray-300 shadow-lg">
                         <thead class="bg-secondary text-white">
                             <tr>
                                 <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">
@@ -103,7 +116,7 @@
                 </div>
 
                 <!-- Note explicative -->
-                <div class="mt-8 bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
+                <div class="mt-8 bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg fade-in-right">
                     <h3 class="text-lg font-bold text-primary mb-3">L'élargissement de l'assiette fiscale :</h3>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
@@ -146,3 +159,56 @@
     </div>
 </div>
 
+<script>
+    function filterTable(year) {
+        const table = document.getElementById('recettesTable');
+        const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        const headers = table.getElementsByTagName('thead')[0].getElementsByTagName('th');
+        
+        // Mettre à jour les styles des boutons
+        document.getElementById('btn-all').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2024').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        document.getElementById('btn-2025').className = 'px-6 py-2 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-200 shadow-lg';
+        
+        if (year === 'all') {
+            document.getElementById('btn-all').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            // Afficher toutes les colonnes
+            headers[1].style.display = '';
+            headers[2].style.display = '';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = '';
+                }
+            }
+        } else if (year === '2024') {
+            document.getElementById('btn-2024').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            // Afficher seulement 2024
+            headers[1].style.display = '';
+            headers[2].style.display = 'none';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = '';
+                    cells[2].style.display = 'none';
+                }
+            }
+        } else if (year === '2025') {
+            document.getElementById('btn-2025').className = 'px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg';
+            // Afficher seulement 2025
+            headers[1].style.display = 'none';
+            headers[2].style.display = '';
+            
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length >= 3) {
+                    cells[1].style.display = 'none';
+                    cells[2].style.display = '';
+                }
+            }
+        }
+    }
+</script>
