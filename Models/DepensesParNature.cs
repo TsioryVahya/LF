@@ -1,0 +1,24 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LF.Models;
+
+public class DepensesParNature
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdDepensesParNature { get; set; }
+
+    [Required]
+    public int Annee { get; set; }
+
+    [Required]
+    [Column(TypeName = "numeric(15,2)")]
+    public decimal Montant { get; set; }
+
+    [Required]
+    public int IdNatureDepenses { get; set; }
+
+    [ForeignKey("IdNatureDepenses")]
+    public NatureDepenses? NatureDepenses { get; set; }
+}

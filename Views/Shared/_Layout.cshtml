@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Loi de Finances Madagascar</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -79,11 +80,44 @@
                         </div>
                     </div>
                     
-                    <!-- Dépenses -->
-                    <a asp-area="" asp-controller="Home" asp-action="Depenses" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Dépenses
-                    </a>
+                    <!-- Dépenses avec Dropdown -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200 flex items-center">
+                            Dépenses
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a asp-area="" asp-controller="Depenses" asp-action="ParNature" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Dépenses par Nature
+                                </a>
+                                <a asp-area="" asp-controller="Depenses" asp-action="Administratives" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Dépenses Administratives
+                                </a>
+                                <a asp-area="" asp-controller="Depenses" asp-action="Fonctionnement" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Dépenses de Fonctionnement
+                                </a>
+                                <a asp-area="" asp-controller="Depenses" asp-action="Investissement" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Dépenses d'Investissement
+                                </a>
+                                <a asp-area="" asp-controller="Depenses" asp-action="SoldePensions" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Solde et Pensions
+                                </a>
+                                <a asp-area="" asp-controller="Depenses" asp-action="DeficitBudgetaire" 
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary hover:text-primary transition-colors">
+                                    Déficit Budgétaire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Menu Mobile (Hamburger) -->
@@ -134,10 +168,40 @@
                     </div>
                     
                     <!-- Dépenses Mobile -->
-                    <a asp-area="" asp-controller="Home" asp-action="Depenses" 
-                       class="px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200">
-                        Dépenses
-                    </a>
+                    <div>
+                        <button id="mobile-depenses-toggle" class="w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-secondary hover:text-primary rounded-lg transition-all duration-200 flex items-center justify-between">
+                            Dépenses
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-depenses-menu" class="hidden ml-4 mt-2 space-y-2">
+                            <a asp-area="" asp-controller="Depenses" asp-action="ParNature" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Dépenses par Nature
+                            </a>
+                            <a asp-area="" asp-controller="Depenses" asp-action="Administratives" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Dépenses Administratives
+                            </a>
+                            <a asp-area="" asp-controller="Depenses" asp-action="Fonctionnement" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Dépenses de Fonctionnement
+                            </a>
+                            <a asp-area="" asp-controller="Depenses" asp-action="Investissement" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Dépenses d'Investissement
+                            </a>
+                            <a asp-area="" asp-controller="Depenses" asp-action="SoldePensions" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Solde et Pensions
+                            </a>
+                            <a asp-area="" asp-controller="Depenses" asp-action="DeficitBudgetaire" 
+                               class="block px-4 py-2 text-sm text-accent hover:text-white transition-colors">
+                                Déficit Budgétaire
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,6 +235,8 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileRecettesToggle = document.getElementById('mobile-recettes-toggle');
             const mobileRecettesMenu = document.getElementById('mobile-recettes-menu');
+            const mobileDepensesToggle = document.getElementById('mobile-depenses-toggle');
+            const mobileDepensesMenu = document.getElementById('mobile-depenses-menu');
             
             // Toggle menu principal mobile
             if (mobileMenuButton && mobileMenu) {
@@ -183,6 +249,13 @@
             if (mobileRecettesToggle && mobileRecettesMenu) {
                 mobileRecettesToggle.addEventListener('click', function() {
                     mobileRecettesMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Toggle dropdown Dépenses mobile
+            if (mobileDepensesToggle && mobileDepensesMenu) {
+                mobileDepensesToggle.addEventListener('click', function() {
+                    mobileDepensesMenu.classList.toggle('hidden');
                 });
             }
         });

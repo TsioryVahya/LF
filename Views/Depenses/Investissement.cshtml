@@ -1,0 +1,146 @@
+@model IEnumerable<LF.Models.DepensesInvestissement>
+
+@{
+    ViewData["Title"] = "Dépenses d'Investissement";
+    var data2024 = Model.FirstOrDefault(d => d.Annee == 2024);
+    var data2025 = Model.FirstOrDefault(d => d.Annee == 2025);
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="w-full">
+        <div class="bg-gradient-to-r from-primary to-secondary shadow-lg fade-in-down">
+            <div class="max-w-7xl mx-auto px-8 py-16 md:py-20">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center">
+                    Dépenses d'Investissement
+                </h1>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-xl overflow-hidden">
+            <div class="p-8 md:p-12">
+                <div class="mb-8 bg-white border-l-4 border-primary p-6 rounded-r-lg fade-in-left">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Les dépenses d'investissement pour 2025 atteignent <strong class="text-primary">8 537,2 milliards d'Ariary</strong>, 
+                        soit une augmentation de <strong class="text-primary">76,5%</strong> par rapport à 2024.
+                    </p>
+                </div>
+
+                <!-- Graphique -->
+                <div class="mb-8 fade-in-up">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Évolution des Dépenses d'Investissement</h3>
+                        <canvas id="investissementChart" height="100"></canvas>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto fade-in-up">
+                    <table class="min-w-full bg-white border border-gray-300 shadow-lg">
+                        <thead class="bg-secondary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold uppercase">Année</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">Financement Interne</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">Financement Externe</th>
+                                <th class="px-6 py-4 text-right text-sm font-bold uppercase">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm font-medium">@item.Annee</td>
+                                    <td class="px-6 py-4 text-sm text-right">@item.FinancementInterne?.ToString("N1")</td>
+                                    <td class="px-6 py-4 text-sm text-right">@item.FinancementExterne?.ToString("N1")</td>
+                                    <td class="px-6 py-4 text-sm text-right font-bold text-primary">@item.Total?.ToString("N1")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Note explicative -->
+                <div class="mt-8 bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg fade-in-right">
+                    <h3 class="text-lg font-bold text-primary mb-3">Points clés :</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Le financement interne augmente de 88,3% pour atteindre 2 377,3 milliards d'Ariary</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Le financement externe augmente de 72,4% pour atteindre 6 159,9 milliards d'Ariary</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a asp-controller="Home" asp-action="Index" 
+                       class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const ctx = document.getElementById('investissementChart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['LFR 2024', 'LF 2025'],
+                datasets: [
+                    {
+                        label: 'Financement Interne',
+                        data: [@(data2024?.FinancementInterne ?? 0), @(data2025?.FinancementInterne ?? 0)],
+                        backgroundColor: '#1b8895',
+                        borderColor: '#1b8895',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Financement Externe',
+                        data: [@(data2024?.FinancementExterne ?? 0), @(data2025?.FinancementExterne ?? 0)],
+                        backgroundColor: '#82d4d9',
+                        borderColor: '#82d4d9',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString() + ' Mds Ar';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' Mds Ar';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}
+
