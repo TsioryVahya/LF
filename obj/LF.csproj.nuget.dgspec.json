@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ITU\\S5\\WEB\\git\\LF\\LF.csproj": {}
+    "D:\\ITU\\S5\\LF\\LF.csproj": {}
   },
   "projects": {
-    "G:\\ITU\\S5\\WEB\\git\\LF\\LF.csproj": {
+    "D:\\ITU\\S5\\LF\\LF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ITU\\S5\\WEB\\git\\LF\\LF.csproj",
+        "projectUniqueName": "D:\\ITU\\S5\\LF\\LF.csproj",
         "projectName": "LF",
-        "projectPath": "G:\\ITU\\S5\\WEB\\git\\LF\\LF.csproj",
-        "packagesPath": "C:\\Users\\TSIORY\\.nuget\\packages\\",
-        "outputPath": "G:\\ITU\\S5\\WEB\\git\\LF\\obj\\",
+        "projectPath": "D:\\ITU\\S5\\LF\\LF.csproj",
+        "packagesPath": "C:\\Users\\TENDRY\\.nuget\\packages\\",
+        "outputPath": "D:\\ITU\\S5\\LF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TSIORY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\TENDRY\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

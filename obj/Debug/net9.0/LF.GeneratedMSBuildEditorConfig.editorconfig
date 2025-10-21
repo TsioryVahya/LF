@@ -17,49 +17,49 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LF
 build_property.RootNamespace = LF
-build_property.ProjectDir = G:\ITU\S5\WEB\git\LF\
+build_property.ProjectDir = D:\ITU\S5\LF\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\ITU\S5\WEB\git\LF
+build_property.MSBuildProjectDirectory = D:\ITU\S5\LF
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Home/Index.cshtml]
+[D:/ITU/S5/LF/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Home/Privacy.cshtml]
+[D:/ITU/S5/LF/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Recettes/Douanieres.cshtml]
+[D:/ITU/S5/LF/Views/Recettes/Douanieres.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXR0ZXNcRG91YW5pZXJlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Recettes/Interieures.cshtml]
+[D:/ITU/S5/LF/Views/Recettes/Interieures.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXR0ZXNcSW50ZXJpZXVyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Shared/Error.cshtml]
+[D:/ITU/S5/LF/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ITU/S5/LF/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/_ViewImports.cshtml]
+[D:/ITU/S5/LF/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/_ViewStart.cshtml]
+[D:/ITU/S5/LF/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/ITU/S5/WEB/git/LF/Views/Shared/_Layout.cshtml]
+[D:/ITU/S5/LF/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-66ao3dcgp0
